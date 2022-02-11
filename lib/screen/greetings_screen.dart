@@ -20,7 +20,7 @@ class GreetingsScreen extends StatelessWidget {
     );
   }
 
-  void _onTapPlayAds(BuildContext context) {
+  void _onTapPlayAds() {
     locator.get<GreetingsCubit>().onTapPlayAds();
   }
 
@@ -48,7 +48,7 @@ class GreetingsScreen extends StatelessWidget {
                     opacity: state.isPlayAdsButtonShown ? 1 : 0,
                     duration: const Duration(milliseconds: 500),
                     child: PlayAdsButton(
-                      onTap: () => _onTapPlayAds(context),
+                      onTap: _onTapPlayAds,
                     ),
                   );
               }),

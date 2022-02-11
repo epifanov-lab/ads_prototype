@@ -21,7 +21,7 @@ class PlayAdsButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: const Text(
-        "PLAY ADS",
+        "PLAY AD",
         style: TextStyle(
           fontSize: 20,
           color: Colors.white,

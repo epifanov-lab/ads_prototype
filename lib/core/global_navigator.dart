@@ -9,67 +9,67 @@ class GlobalNavigator {
     required GlobalKey<NavigatorState> navigatorKey,
   }) : _navigatorKey = navigatorKey;
 
-  Future<T?>? popAndPushNamed<T extends Object, TO extends Object>(
+  Future popAndPushNamed(
     String routeName, {
-    TO? result,
+    dynamic result,
     Object? arguments,
   }) {
-    return _navigatorKey.currentState?.popAndPushNamed(
+    return _navigatorKey.currentState!.popAndPushNamed(
       routeName,
       result: result,
       arguments: arguments,
     );
   }
 
-  Future<T?>?  pushAndRemoveUntil<T extends Object>(
-    Route<T> newRoute,
+  Future pushAndRemoveUntil(
+    Route newRoute,
     RoutePredicate predicate,
   ) {
-    return _navigatorKey.currentState?.pushAndRemoveUntil(
+    return _navigatorKey.currentState!.pushAndRemoveUntil(
       newRoute,
       predicate,
     );
   }
 
-  Future<T?>?  pushNamedAndRemoveUntil<T extends Object>(
+  Future pushNamedAndRemoveUntil(
     String newRouteName,
     RoutePredicate predicate, {
     Object? arguments,
   }) {
-    return _navigatorKey.currentState?.pushNamedAndRemoveUntil(
+    return _navigatorKey.currentState!.pushNamedAndRemoveUntil(
       newRouteName,
       (route) => false,
       arguments: arguments,
     );
   }
 
-  Future<T?>? pushNamed<T extends Object>(
+  Future pushNamed(
     String routeName, {
     Object? arguments,
   }) {
-    return _navigatorKey.currentState?.pushNamed(
+    return _navigatorKey.currentState!.pushNamed(
       routeName,
       arguments: arguments,
     );
   }
 
-  Future<bool>? maybePop<T extends Object>([T? result]) {
-    return _navigatorKey.currentState?.maybePop(result);
+  Future<bool> maybePop([dynamic result]) {
+    return _navigatorKey.currentState!.maybePop(result);
   }
 
   void pop<T extends Object>([T? result]) {
-    return _navigatorKey.currentState?.pop(result);
+    return _navigatorKey.currentState!.pop(result);
   }
 
-  Future<T?>? push<T extends Object>(Route<T> route) {
-    return _navigatorKey.currentState?.push(route);
+  Future push(Route route) {
+    return _navigatorKey.currentState!.push(route);
   }
 
-  Future<T?>? pushReplacement<T extends Object, TO extends Object>(
-    Route<T> newRoute, {
-    TO? result,
+  Future pushReplacement(
+    Route newRoute, {
+    dynamic result,
   }) {
-    return _navigatorKey.currentState?.pushReplacement<T, TO>(
+    return _navigatorKey.currentState!.pushReplacement(
       newRoute,
       result: result,
     );
