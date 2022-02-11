@@ -10,21 +10,25 @@ dependencies:
   flutter_bloc: ^7.0.0
   get_it: ^7.2.0
   equatable: ^2.0.0
+  animated_text_kit: ^4.2.1
 
   flutter:
     sdk: flutter
-
 
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^1.0.0
-flutter:
 
+flutter:
   uses-material-design: true
+  fonts:
+    - family: Minecraft
+      fonts:
+        - asset: assets/fonts/minecraft_bold.otf
+        - asset: assets/fonts/minecraft_regular.otf
 
 
 

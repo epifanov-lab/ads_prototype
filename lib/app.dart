@@ -6,6 +6,7 @@ import 'package:ads_prototype/core/locator.dart';
 import 'package:ads_prototype/utils/no_glow_scroll_begavior.dart';
 
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
+GlobalNavigator? globalNavigator;
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -27,7 +28,7 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    final globalNavigator = GlobalNavigator(navigatorKey: _navigatorKey);
+    globalNavigator = GlobalNavigator(navigatorKey: _navigatorKey);
     Future locatorFuture = setupLocator();
     return FutureBuilder(
       future: locatorFuture,
