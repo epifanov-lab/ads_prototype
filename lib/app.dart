@@ -1,12 +1,10 @@
+import 'package:ads_prototype/core/locator.dart';
 import 'package:ads_prototype/screen/greetings_screen.dart';
+import 'package:ads_prototype/utils/no_glow_scroll_begavior.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ads_prototype/core/global_navigator.dart';
-import 'package:ads_prototype/core/locator.dart';
-import 'package:ads_prototype/utils/no_glow_scroll_begavior.dart';
 
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
-GlobalNavigator? globalNavigator;
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -28,10 +26,8 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    globalNavigator = GlobalNavigator(navigatorKey: _navigatorKey);
-    Future locatorFuture = setupLocator();
     return FutureBuilder(
-      future: locatorFuture,
+      future: setupLocator(_navigatorKey),
       builder: (BuildContext context, snapshot) {
         return AppView(navigatorKey: _navigatorKey,);
       },
@@ -70,16 +66,13 @@ class _AppViewState extends State<AppView> with WidgetsBindingObserver {
       navigatorObservers: [routeObserver],
       scrollBehavior: NoGlowScrollBehavior(),
       onGenerateRoute: (_) => GreetingsScreen.route(),
-      theme: ThemeData(
-
-      ),
       builder: (context, child) {
+        if (!isLocatorInitialized) {
+          return Container();
+        }
         return Scaffold(
-          body: Stack(
-            children: [
-              child ?? Container(),
-            ],
-          ),
+          backgroundColor: const Color(0xFF333333),
+          body: child ?? Container(),
         );
       },
     );

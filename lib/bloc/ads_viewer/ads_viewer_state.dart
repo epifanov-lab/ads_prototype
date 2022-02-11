@@ -1,20 +1,20 @@
 import 'package:equatable/equatable.dart';
 
-class HlsResourcesState extends Equatable {
+class AdsViewerState extends Equatable {
 
   final dynamic data;
 
-  const HlsResourcesState._({
+  const AdsViewerState._({
     required this.data,
   });
 
-  const HlsResourcesState.initial()
+  const AdsViewerState.initial()
       : this._(data: const []);
 
-  HlsResourcesState copyWith({
+  AdsViewerState copyWith({
     dynamic data,
   }) {
-    return HlsResourcesState._(
+    return AdsViewerState._(
       data: data ?? this.data,
     );
   }
