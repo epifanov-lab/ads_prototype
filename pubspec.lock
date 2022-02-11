@@ -255,9 +255,11 @@ packages:
   video_player:
     dependency: "direct main"
     description:
-      path: "video_player/video_player"
-      relative: true
-    source: path
+      path: "packages/video_player/video_player"
+      ref: HEAD
+      resolved-ref: "36df4c59f8401fc2b50a923196d7644d83f0f435"
+      url: "https://github.com/epifanov-lab/plugins.git"
+    source: git
     version: "2.2.18"
   video_player_android:
     dependency: transitive
