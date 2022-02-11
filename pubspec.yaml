@@ -12,6 +12,9 @@ dependencies:
   equatable: ^2.0.0
   animated_text_kit: ^4.2.1
 
+  video_player:
+    path: ./video_player/video_player
+
   flutter:
     sdk: flutter
 
