@@ -1,5 +1,6 @@
 import 'package:ads_prototype/bloc/ads_viewer/ads_viewer_cubit.dart';
 import 'package:ads_prototype/core/locator.dart';
+import 'package:ads_prototype/plugins/ima_ads_video_player/ima_content_platform_view_player.dart';
 import 'package:ads_prototype/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:ads_prototype/utils/screen_transitions.dart';
@@ -31,6 +32,7 @@ class AdsViewerScreen extends StatelessWidget {
           BackButtonWidget(
             onTap: _onTapBack,
           ),
+          const ImaContentPlatformViewPlayerWidget(),
         ],
       ),
     );
